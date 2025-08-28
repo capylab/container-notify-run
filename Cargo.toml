@@ -1,0 +1,22 @@
+[package]
+name = "container-notify-run"
+version = "0.1.0"
+edition = "2024"
+
+[lib]
+name = "distrobox_run_notify"
+path = "src/logger.rs"
+
+[dependencies]
+log = { version = "0.4", features = ["std"] }
+ctrlc = "3.4"
+sd-notify = "0.4"
+libc = "0.2"
+
+[[bin]]
+name = "container-notify-wrapper"
+path = "src/container_notify_wrapper.rs"
+
+[[bin]]
+name = "host-notify-waiter"
+path = "src/host_notify_waiter.rs"
